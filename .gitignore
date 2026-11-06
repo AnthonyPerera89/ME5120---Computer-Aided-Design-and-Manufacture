@@ -1,8 +1,12 @@
 Datasheets/
+Diagrams/
+README*
+*.md
 *-backups/
 *.lck
 fp-info-cache
 _autosave-*
 *.raw
 *.log
-*.op.raw
+*.db
+*.net

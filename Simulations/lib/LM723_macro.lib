@@ -12,9 +12,10 @@
 * Pin order:  V+  V-  VC  VOUT  VREF  NI  INV  COMP  CL  CS
 * (DIP-14 pin numbers: V+=12 V-=7 VC=11 VOUT=10 VREF=6 NI=5 INV=4 COMP=13 CL=2 CS=3)
 * ============================================================================
-.subckt LM723 VP VM VC VOUT VREF NI INV COMP CL CS
-* --- Reference: 7.15 V, collapses if V+ - V- is too low ---------------------
-Bref  nref VM V=min(7.15, max(V(VP,VM)-2.2, 0))
+.subckt LM723 VP VM VC VOUT VREF NI INV COMP CL CS params: VR=7.15
+* --- Reference: VR (default 7.15 V), collapses if V+ - V- is too low ---------
+* VR can be set per instance for tolerance studies: LM723C 6.80 to 7.50 V [DS1 p.4]
+Bref  nref VM V=min({VR}, max(V(VP,VM)-2.2, 0))
 Rref  nref VREF 2
 * --- Error amplifier: pull-up current into COMP, differential sink ----------
 Ipu   VP COMP 0.6m

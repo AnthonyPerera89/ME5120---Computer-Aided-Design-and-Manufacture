@@ -1,0 +1,21 @@
+* SIM02b  Why a trimmer is needed: VOUT,max with tolerances and NO trimmer
+* Pot track tolerance +/-20 %  -> Rpot(max) = 8k / 10k / 12k   (design choice: typical carbon pot)
+* LM723C VREF 6.80 / 7.15 / 7.50 V                             [DS1 p.4, Reference Voltage]
+* RLO fixed at 1.96k (original C3 design).  Pot at full scale.
+* Expected: VOUT,max spreads ~14.3 V ... ~22.1 V  (target 18.0 V)
+.include ../lib/LM723_macro.lib
+.param Rp=10k VR=7.15
+VIN   vin 0 24
+XU1   vin 0 vin vo vref ni inv comp vo vo LM723 VR={VR}
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  vo inv {Rp}
+RLO   inv 0 1.96k
+RLOAD vo 0 2k
+.step param Rp list 8k 10k 12k
+.step param VR list 6.8 7.15 7.5
+.op
+.meas OP vmax_V FIND V(vo)
+.end

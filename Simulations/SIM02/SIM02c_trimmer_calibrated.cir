@@ -1,0 +1,24 @@
+* SIM02c  The fix: RLO = 1.30k fixed + 0-2k multi-turn trimmer, set once so full scale = 18.0 V
+* For each tolerance corner the trimmer setting that gives 18.0 V is
+*   RTRIM = Rpot / (18/VNI - 1) - 1.30k ,  VNI = VR x 3.3/(4.7+3.3)      (from C3, solved for RLO)
+* Pass if VOUT,max = 18.0 V at every corner AND RTRIM stays inside 0 ... 2k
+.include ../lib/LM723_macro.lib
+.param Rp=10k VR=7.15
+.param VNI={VR*3.3/8.0}
+.param Rtrim={Rp/(18/VNI-1)-1.30k}
+VIN   vin 0 24
+XU1   vin 0 vin vo vref ni inv comp vo vo LM723 VR={VR}
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  vo inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 {Rtrim}
+RLOAD vo 0 2k
+.step param Rp list 8k 10k 12k
+.step param VR list 6.8 7.15 7.5
+.op
+.meas OP vmax_V FIND V(vo)
+.meas OP rtrim_ohm PARAM Rtrim
+.end
