@@ -1,0 +1,23 @@
+* SIM02  Output voltage network: VOUT vs pot setting (checks calculation C3)
+* Topology: reference divided onto NI (Table 2, +2..+7 V form) and output gained up onto INV
+*           (Table 2, +7..+37 V form)  [DS1 p.8, Table 2]; divider placement as [DS1 p.10, Figure 19]
+* Values: RA 4.7k / RB 3.3k -> VNI = 2.95 V;  Rpot 0..10k (rheostat) + Rlo 1.96k   (P10, P11)
+* Input 24 V (P1). No pass transistor yet: LM723 drives a light 2 k load directly (<= 9 mA).
+* Expected: VOUT = VNI*(1 + Rpot/Rlo): 2.95 V at Rpot = 0 ... 18.0 V at Rpot = 10k
+.include ../lib/LM723_macro.lib
+.param Rp=5k
+VIN   vin 0 24
+XU1   vin 0 vin vo vref ni inv comp vo vo LM723
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  vo inv {Rp}
+RLO   inv 0 1.96k
+RLOAD vo 0 2k
+* Rpot = 1 milliohm stands in for 0 ohm (a pot turned fully down)
+.step param Rp list 1m 1k 2k 3k 4k 5k 6k 7k 8k 9k 10k
+.op
+.meas OP vout_V FIND V(vo)
+.meas OP vni_V FIND V(ni)
+.end

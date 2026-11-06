@@ -1,9 +1,8 @@
 Version 4
 SymbolType BLOCK
 RECTANGLE Normal -96 -128 96 128
-TEXT 0 0 Center 2 LM723
-WINDOW 0 0 -136 Bottom 2
-WINDOW 3 0 136 Top 2
+WINDOW 0 64 -136 Left 1
+WINDOW 3 32 144 Left 1
 SYMATTR Prefix X
 SYMATTR Value LM723
 SYMATTR Description LM723 behavioural macro-model (Simulations/lib/LM723_macro.lib)
