@@ -1,0 +1,21 @@
+* SIM01a  LM723 macro-model check: load regulation, Figure 4 circuit
+* Reference circuit: [DS1 p.2, Figure 4] Basic Low Voltage Regulator (2-7 V)
+* Values: Table 1, +5.0 V row: R1 = 2.15k, R2 = 4.99k  [DS1 p.8, Table 1]
+* Test conditions as the datasheet: VIN = V+ = VC = 12 V, RSC = 0, C1 = 100 pF [DS1 p.3 note (1)]
+* Expected: VOUT = VREF*R2/(R1+R2) = 4.997 V ; load regulation 1-50 mA <= 0.15 % [DS1 p.3]
+.include ../lib/LM723_macro.lib
+.param RL=5k
+VIN   vin 0 12
+XU1   vin 0 vin vo vref ni inv comp vo vo LM723
+* Rsc = 0 -> CL and CS both tied to the VOUT pin (limit transistor off)
+R1    vref ni 2.15k
+R2    ni 0 4.99k
+R3    inv vo 1.5k
+C1    comp inv 100p
+RLOAD vo 0 {RL}
+* RL = 5k / 1k / 500 / 100 ohm  ->  1 / 5 / 10 / 50 mA
+.step param RL list 5k 1k 500 100
+.op
+.meas OP vout_V FIND V(vo)
+.meas OP iload_mA FIND I(RLOAD)*1000
+.end

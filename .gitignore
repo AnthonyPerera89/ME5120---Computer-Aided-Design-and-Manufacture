@@ -1,0 +1,8 @@
+Datasheets/
+*-backups/
+*.lck
+fp-info-cache
+_autosave-*
+*.raw
+*.log
+*.op.raw

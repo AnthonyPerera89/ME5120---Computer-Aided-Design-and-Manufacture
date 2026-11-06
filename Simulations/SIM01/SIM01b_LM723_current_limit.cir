@@ -1,0 +1,18 @@
+* SIM01b  LM723 macro-model check: short-circuit current limit
+* Datasheet test: RSC = 10 ohm, VOUT = 0 -> ISC = 65 mA  [DS1 p.4, Short Circuit Current Limit]
+* Circuit: [DS1 p.2, Figure 4] with Rsc between VOUT pin (CL) and output (CS)
+* Expected: I(short) ~ 65 mA
+.include ../lib/LM723_macro.lib
+VIN   vin 0 12
+XU1   vin 0 vin vpin vref ni inv comp vpin out LM723
+RSC   vpin out 10
+R1    vref ni 2.15k
+R2    ni 0 4.99k
+R3    inv out 1.5k
+C1    comp inv 100p
+* Output shorted (1 milliohm)
+RSHORT out 0 1m
+.op
+.meas OP isc_mA FIND I(RSHORT)*1000
+.meas OP vsense_V FIND V(vpin,out)
+.end
