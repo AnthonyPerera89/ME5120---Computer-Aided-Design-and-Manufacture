@@ -1,0 +1,29 @@
+* SIM03  Pass stage: LM723 + TIP3055, load 1 mA ... 0.8 A, at VOUT = 3 V and 18 V
+* Circuit: [DS1 p.10, Figure 19] Positive Voltage Regulator (External NPN Pass Transistor)
+* Feedback network from C3/C3b (D16): RPOT 0/10k, RFIX 1.30k, RTRIM 660 (nominal setting)
+* Rsc = 0.68 ohm (P9) sensed by the LM723's own CL/CS limiter here (BC547 comes in SIM04)
+* Checks: VOUT holds under load (load regulation), LM723 headroom V(vin)-V(b) >= 3.0 V [DS1 p.4] (C4),
+*         TIP3055 base current = LM723 output current (C6), TIP3055 dissipation (C1)
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param IL=100m Rp=10k
+VIN   vin 0 24
+XU1   vin 0 vin b vref ni inv comp e out LM723
+Q1    vin b e TIP3055DS
+RSC   e out 0.68
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+ILOAD out 0 {IL}
+.step param IL list 1m 100m 300m 600m 800m
+.step param Rp list 1m 10k
+.op
+.meas OP vout_V   FIND V(out)
+.meas OP head_V   FIND V(vin)-V(b)
+.meas OP ib_mA    FIND Ib(Q1)*1000
+.meas OP ptip_W   FIND (V(vin)-V(e))*Ic(Q1)
+.end
