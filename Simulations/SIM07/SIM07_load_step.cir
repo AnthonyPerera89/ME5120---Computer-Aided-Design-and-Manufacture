@@ -1,0 +1,43 @@
+* SIM07  Stability: load step 10 mA <-> 0.8 A at VOUT = 18 V (checks P12 Ccomp, P16 output cap)
+* Full circuit so far: LM723 + BD139 + TIP3055 (D18), adjustable limit at max (RCL = 0, ~1.05 A),
+*   trimmer network (D16). Output capacitor COUT 100 uF (ESR 0.1 ohm) + 100 nF (P16).
+* Load = current pulse: 10 mA -> 0.8 A at 1 ms (1 us edge), back to 10 mA at 2 ms.
+* CC (COMP -> INV) stepped: 100 pF (datasheet test value), 500 pF (Figure 19, our choice), 2 nF.
+* Look for: dip/overshoot size, ringing, settling time. A stable loop settles without
+* sustained oscillation. NOTE: the LM723 model is a behavioural model; its high-frequency
+* behaviour is approximate (the datasheet gives no gain-bandwidth figure), so treat the
+* transient as a relative comparison between CC values, not an exact prediction.
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param Rp=10k Rcl=0 CC=500p
+VIN   vin 0 24
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv {CC}
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+COUT  out co 100u
+RESR  co 0 0.1
+CHF   out 0 100n
+ILOAD out 0 PULSE(10m 800m 1m 1u 1u 1m 3m)
+.step param CC list 100p 500p 2n
+.tran 0 3m 0.5m 1u
+.meas TRAN vdip_V   MIN V(out) FROM 1m TO 1.5m
+.meas TRAN vpeak_V  MAX V(out) FROM 2m TO 2.5m
+.meas TRAN vss_V    FIND V(out) AT 1.9m
+.end
