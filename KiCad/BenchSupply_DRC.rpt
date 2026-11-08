@@ -1,0 +1,40 @@
+** Drc report for BenchSupply.kicad_pcb **
+** Created on 2026-11-08T16:17:59 **
+** Report includes: Errors, Warnings **
+
+** Found 6 DRC violations **
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(177.0000 mm, 165.0000 mm): Segment on Edge.Cuts
+    @(131.9300 mm, 154.3800 mm): Segment of RV3 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(177.0000 mm, 165.0000 mm): Segment on Edge.Cuts
+    @(150.0700 mm, 154.3800 mm): Segment of RV3 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(177.0000 mm, 165.0000 mm): Segment on Edge.Cuts
+    @(107.9300 mm, 154.3800 mm): Segment of RV1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(177.0000 mm, 165.0000 mm): Segment on Edge.Cuts
+    @(126.0700 mm, 154.3800 mm): Segment of RV1 on F.Silkscreen
+[lib_footprint_mismatch]: Footprint 'Potentiometer_Alps_RK163_Single_Horizontal' does not match copy in library 'Potentiometer_THT'
+    Local override; warning
+    @(136.0000 mm, 161.2000 mm): Footprint RV3
+[lib_footprint_mismatch]: Footprint 'Potentiometer_Alps_RK163_Single_Horizontal' does not match copy in library 'Potentiometer_THT'
+    Local override; warning
+    @(112.0000 mm, 161.2000 mm): Footprint RV1
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

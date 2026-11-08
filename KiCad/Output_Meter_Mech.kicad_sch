@@ -3280,7 +3280,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e840d54f-22f1-4afe-999e-866b9c9bd0d6")
@@ -3306,7 +3306,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Heatsink:Heatsink_AAVID_Extruded_531302B02500G_34.9x12.7mm_H63.5mm"
 			(at 203.2 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -3338,7 +3338,7 @@
 				)
 			)
 		)
-		(property "Rating" "Board-edge heatsink for Q1, ~1.4 K/W (C5 to be rechecked for 25 W short)"
+		(property "Rating" "Board-mount TO-247 extrusion 34.9x12.7x63.5 mm; ~10 W continuous natural convection, full 25 W needs forced air (D33)"
 			(at 203.2 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -3349,7 +3349,7 @@
 				)
 			)
 		)
-		(property "MPN" "TO-247 heatsink ~1.4 K/W (off-board, edge overhang)"
+		(property "MPN" "Aavid (Boyd) 531302B02500G"
 			(at 203.2 111.76 0)
 			(hide yes)
 			(show_name no)

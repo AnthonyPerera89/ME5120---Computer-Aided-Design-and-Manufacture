@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Bench Power Supply 3-18 V, 50 mA-1 A (LM723)")
-		(date "2026-11-08")
+		(date "2026-11-02")
 		(rev "A")
 		(company "University of Moratuwa - ME5120 CAD&M")
 		(comment 1 "Designer: V.N.A. Perera (259110H)")
@@ -26,7 +26,7 @@
 		)
 		(uuid "1e32d376-61e2-42fc-83f2-41ecb0e63b44")
 	)
-	(text "Signal flow left to right: 24 V adapter -> input protection -> LM723 regulator + Darlington pass stage -> output.\nGND is common to all sheets (power symbol). Open a block: double-click it."
+	(text "Signal flow left to right: 24 V adapter -> input protection -> LM723 regulator + Darlington pass stage -> output.\nGND is common to all sheets (power symbol). "
 		(exclude_from_sim no)
 		(at 39.37 31.75 0)
 		(effects
@@ -48,7 +48,7 @@
 		)
 		(uuid "88dc453a-8f3a-4281-b78f-2a605af76fc4")
 	)
-	(text "P1 - OVERVIEW: BLOCK DIAGRAM"
+	(text "OVERVIEW: BLOCK DIAGRAM"
 		(exclude_from_sim no)
 		(at 39.37 25.4 0)
 		(effects
@@ -71,7 +71,7 @@
 		)
 		(uuid "a3096611-6dab-4e35-8ad2-13d269fe72c9")
 	)
-	(text "REVISIONS\nRev A  2026-11-08  First issue. Circuit = LTspice SIM09 (frozen). V.N.A. Perera"
+	(text ""
 		(exclude_from_sim no)
 		(at 39.37 190.5 0)
 		(effects
