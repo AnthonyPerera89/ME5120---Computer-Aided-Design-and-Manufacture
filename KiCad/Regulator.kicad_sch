@@ -462,6 +462,48 @@
 				)
 			)
 		)
+		(property "Sim.Device" "NPN"
+
+			(at 0 0 0)
+
+			(show_name no)
+
+			(do_not_autoplace no)
+
+			(hide yes)
+
+			(effects
+
+				(font
+
+					(size 1.27 1.27)
+
+				)
+
+			)
+
+		)
+		(property "Sim.Pins" "1=E 2=C 3=B"
+
+			(at 0 0 0)
+
+			(show_name no)
+
+			(do_not_autoplace no)
+
+			(hide yes)
+
+			(effects
+
+				(font
+
+					(size 1.27 1.27)
+
+				)
+
+			)
+
+		)
 		(embedded_fonts no)
 		(symbol "BD139_0_1"
 			(polyline
@@ -681,6 +723,48 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "Sim.Device" "NPN"
+
+			(at 0 0 0)
+
+			(show_name no)
+
+			(do_not_autoplace no)
+
+			(hide yes)
+
+			(effects
+
+				(font
+
+					(size 1.27 1.27)
+
+				)
+
+			)
+
+		)
+		(property "Sim.Pins" "1=B 2=C 3=E"
+
+			(at 0 0 0)
+
+			(show_name no)
+
+			(do_not_autoplace no)
+
+			(hide yes)
+
+			(effects
+
+				(font
+
+					(size 1.27 1.27)
+
+				)
+
+			)
+
 		)
 		(embedded_fonts no)
 		(symbol "TIP3055_0_1"

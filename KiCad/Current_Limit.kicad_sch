@@ -104,6 +104,68 @@
 				)
 			)
 		)
+		(property "Sim.Device" "NPN"
+
+
+			(at 0 0 0)
+
+
+			(show_name no)
+
+
+			(do_not_autoplace no)
+
+
+			(hide yes)
+
+
+			(effects
+
+
+				(font
+
+
+					(size 1.27 1.27)
+
+
+				)
+
+
+			)
+
+
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+
+
+			(at 0 0 0)
+
+
+			(show_name no)
+
+
+			(do_not_autoplace no)
+
+
+			(hide yes)
+
+
+			(effects
+
+
+				(font
+
+
+					(size 1.27 1.27)
+
+
+				)
+
+
+			)
+
+
+		)
 		(embedded_fonts no)
 		(symbol "BC547_0_1"
 			(polyline
@@ -324,6 +386,68 @@
 				)
 			)
 		)
+		(property "Sim.Device" "PNP"
+
+
+			(at 0 0 0)
+
+
+			(show_name no)
+
+
+			(do_not_autoplace no)
+
+
+			(hide yes)
+
+
+			(effects
+
+
+				(font
+
+
+					(size 1.27 1.27)
+
+
+				)
+
+
+			)
+
+
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+
+
+			(at 0 0 0)
+
+
+			(show_name no)
+
+
+			(do_not_autoplace no)
+
+
+			(hide yes)
+
+
+			(effects
+
+
+				(font
+
+
+					(size 1.27 1.27)
+
+
+				)
+
+
+			)
+
+
+		)
 		(embedded_fonts no)
 		(symbol "BC557_0_1"
 			(polyline
@@ -540,6 +664,48 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "Sim.Device" "D"
+
+			(at 0 0 0)
+
+			(show_name no)
+
+			(do_not_autoplace no)
+
+			(hide yes)
+
+			(effects
+
+				(font
+
+					(size 1.27 1.27)
+
+				)
+
+			)
+
+		)
+		(property "Sim.Pins" "1=K 2=A"
+
+			(at 0 0 0)
+
+			(show_name no)
+
+			(do_not_autoplace no)
+
+			(hide yes)
+
+			(effects
+
+				(font
+
+					(size 1.27 1.27)
+
+				)
+
+			)
+
 		)
 		(embedded_fonts no)
 		(symbol "1N4148W_0_1"
