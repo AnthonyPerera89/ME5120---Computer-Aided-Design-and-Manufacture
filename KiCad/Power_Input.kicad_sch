@@ -1579,7 +1579,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal"
 			(at 50.8 101.6 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1594,6 +1594,13 @@
 			)
 		)
 		(property "Rating" "5.5/2.1 mm, 2.5 A; centre pin +24 V"
+			(at 50.8 101.6 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "CUI PJ-102AH"
 			(at 50.8 101.6 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1624,13 +1631,13 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Value" "1.5A_hold_30V"
+		(property "Value" "1.5A_hold_33V"
 			(at 78.74 102.235 90)
 			(effects
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Fuse:Fuse_2920_7451Metric"
 			(at 78.74 99.06 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1644,7 +1651,14 @@
 				(hide yes)
 			)
 		)
-		(property "Rating" "Bourns MF-R150: 1.5 A hold, 3 A trip, 30 V"
+		(property "Rating" "PTC 2920 SMD: 1.5 A hold, 3 A trip, 33 V (D25)"
+			(at 78.74 99.06 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "Bourns MF-SM150/33-2"
 			(at 78.74 99.06 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1681,7 +1695,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SMA"
 			(at 101.6 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1696,6 +1710,13 @@
 			)
 		)
 		(property "Rating" "3 A, 40 V Schottky, reverse-polarity clamp"
+			(at 101.6 111.76 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "SS34 (onsemi/Vishay)"
 			(at 101.6 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1734,7 +1755,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
 			(at 121.92 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1749,6 +1770,13 @@
 			)
 		)
 		(property "Rating" "35 V, low-ESR electrolytic"
+			(at 121.92 111.76 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "470uF 35V 10x16 low-ESR"
 			(at 121.92 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1787,7 +1815,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 139.7 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1833,7 +1861,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 160.02 109.22 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1877,7 +1905,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 160.02 121.92 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1930,7 +1958,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 			(at 180.34 99.06 0)
 			(effects
 				(font (size 1.27 1.27))

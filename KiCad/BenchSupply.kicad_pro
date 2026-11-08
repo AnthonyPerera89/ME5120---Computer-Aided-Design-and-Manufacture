@@ -9,5 +9,11 @@
       "Root"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {},
+  "erc": {
+    "rule_severities": {
+      "footprint_link_issues": "error",
+      "footprint_filter": "ignore"
+    }
+  }
 }

@@ -1529,7 +1529,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
 			(at 76.2 114.3 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1537,6 +1537,13 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 76.2 114.3 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "100uF 35V 6.3x11 low-ESR"
 			(at 76.2 114.3 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1575,7 +1582,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 93.98 114.3 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1619,7 +1626,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
 			(at 147.32 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1663,7 +1670,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 147.32 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1714,7 +1721,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
 			(at 147.32 162.56 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1765,7 +1772,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 121.92 177.8 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1818,7 +1825,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 			(at 111.76 99.06 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1864,7 +1871,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 			(at 93.98 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1893,7 +1900,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(uuid "e840d54f-22f1-4afe-999e-866b9c9bd0d6")
 		(property "Reference" "HS1"
@@ -1925,6 +1932,13 @@
 			)
 		)
 		(property "Rating" "Board-edge heatsink for Q1, ~1.4 K/W (C5 to be rechecked for 25 W short)"
+			(at 203.2 111.76 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "TO-247 heatsink ~1.4 K/W (off-board, edge overhang)"
 			(at 203.2 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1963,7 +1977,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 195.58 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -2009,7 +2023,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 210.82 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -2055,7 +2069,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 226.06 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -2101,7 +2115,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 241.3 139.7 0)
 			(effects
 				(font (size 1.27 1.27))

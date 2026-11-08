@@ -1,0 +1,44 @@
+Ref,Value,Footprint,MPN / part,Rating / note,Page,Mount
+C1,470u_35V,Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,470uF 35V 10x16 low-ESR,"35 V, low-ESR electrolytic",P2,THT
+C2,100n_50V,Capacitor_SMD:C_0805_2012Metric,,,P2,SMD
+C3,4.7u_25V,Capacitor_SMD:C_1206_3216Metric,,,P3,SMD
+C4,470p_C0G,Capacitor_SMD:C_0805_2012Metric,,,P3,SMD
+C5,100u_35V,Capacitor_THT:CP_Radial_D6.3mm_P2.50mm,100uF 35V 6.3x11 low-ESR,,P5,THT
+C6,100n_50V,Capacitor_SMD:C_0805_2012Metric,,,P5,SMD
+C7,100n_50V,Capacitor_SMD:C_0805_2012Metric,,Decoupling at U1 V+/VC pins (place within 5 mm),P3,SMD
+D1,1N4148W,Diode_SMD:D_SOD-123,Vishay 1N4148W,,P4,SMD
+D2,1N4148W,Diode_SMD:D_SOD-123,Vishay 1N4148W,,P4,SMD
+D3,SS34,Diode_SMD:D_SMA,SS34 (onsemi/Vishay),"3 A, 40 V Schottky, reverse-polarity clamp",P2,SMD
+D4,RED,LED_SMD:LED_0805_2012Metric,,"Power-on LED, 2.2 mA via R1",P2,SMD
+F1,1.5A_hold_33V,Fuse:Fuse_2920_7451Metric,Bourns MF-SM150/33-2,"PTC 2920 SMD: 1.5 A hold, 3 A trip, 33 V (D25)",P2,SMD
+H1,M3,MountingHole:MountingHole_3.2mm_M3,,,P5,mechanical
+H2,M3,MountingHole:MountingHole_3.2mm_M3,,,P5,mechanical
+H3,M3,MountingHole:MountingHole_3.2mm_M3,,,P5,mechanical
+H4,M3,MountingHole:MountingHole_3.2mm_M3,,,P5,mechanical
+HS1,Heatsink_Q1_TO-247,,"TO-247 heatsink ~1.4 K/W (off-board, edge overhang)","Board-edge heatsink for Q1, ~1.4 K/W (C5 to be rechecked for 25 W short)",P5,off-board
+J1,24V_DC_IN,Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal,CUI PJ-102AH,"5.5/2.1 mm, 2.5 A; centre pin +24 V",P2,THT
+J2,OUTPUT_3-18V_1A,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",,,P5,THT
+J3,METER_SUPPLY_VSENSE,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,,"V/A meter thin lead: 1 = VIN supply (~20 mA), 2 = GND, 3 = VOUT sense",P5,THT
+J4,METER_CURRENT_LOOP,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",,"V/A meter thick leads (1 A): 1 = OUT- from J2, 2 = GND; module shunt in series",P5,THT
+JP1,METER_BYPASS,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,"Close (solder bridge / 2-pin link) when no meter is fitted: OUT- to GND, 1 A",P5,THT
+Q1,TIP3055,Package_TO_SOT_THT:TO-247-3_Vertical,onsemi TIP3055G,"TO-247 on board-edge heatsink; 20 W at 1 A / 3 V, ~24 W into a short",P3,THT
+Q2,BC547B,Package_TO_SOT_THT:TO-92_Inline,onsemi BC547BTA,Brief part; turns on at VBE ~0.59 V and pulls U1 COMP down,P4,THT
+Q3,BC557B,Package_TO_SOT_THT:TO-92_Inline,onsemi BC557BTA,Constant-current source I0 = (2 VD - VEB)/R8 = 0.8 mA,P4,THT
+Q4,BD139,Package_TO_SOT_THT:TO-126-3_Vertical,onsemi BD139G,"TO-126 driver; 0.34 W normal, 0.95 W into a short (copper area)",P3,THT
+R1,10k,Resistor_SMD:R_0805_2012Metric,,,P2,SMD
+R2,470,Resistor_SMD:R_0805_2012Metric,,,P3,SMD
+R3,0R56_2W,Resistor_THT:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal,0.56 ohm 2W metal film axial,0.56 ohm 2 W axial (0.62 W at 1.05 A); current-sense resistor RSC,P3,THT
+R4,4.7k_1%,Resistor_SMD:R_0805_2012Metric,,,P3,SMD
+R5,3.3k_1%,Resistor_SMD:R_0805_2012Metric,,,P3,SMD
+R6,1.30k_1%,Resistor_SMD:R_0805_2012Metric,,,P3,SMD
+R7,47,Resistor_SMD:R_0805_2012Metric,,,P4,SMD
+R8,680,Resistor_SMD:R_0805_2012Metric,,,P4,SMD
+R9,22k,Resistor_SMD:R_0805_2012Metric,,,P4,SMD
+RV1,10k_lin,Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical,Alps RK09K1130A 10k lin,"PCB-mount shaft pot, linear; wired as rheostat (voltage set 3-18 V)",P3,THT
+RV2,2k_trim,Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical,Bourns 3296W-1-202LF,"Multi-turn trimmer, rheostat; set ~660 ohm so max output = 18.0 V",P3,THT
+RV3,1k_lin,Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical,Alps RK09K1130A 1k lin,"PCB-mount shaft pot, linear; wired as rheostat (current limit 50 mA-1.05 A)",P4,THT
+TP1,VIN,TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm,,,P2,THT
+TP2,VREF,TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm,,,P3,THT
+TP3,VOUT,TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm,,,P5,THT
+TP4,GND,TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm,,,P5,THT
+U1,LM723CN,Package_DIP:DIP-14_W7.62mm,TI LM723CN,,P3,THT

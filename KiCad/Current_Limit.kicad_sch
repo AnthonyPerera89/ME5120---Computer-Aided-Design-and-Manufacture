@@ -1273,7 +1273,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
 			(at 142.24 129.54 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1288,6 +1288,13 @@
 			)
 		)
 		(property "Rating" "Brief part; turns on at VBE ~0.59 V and pulls U1 COMP down"
+			(at 142.24 129.54 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "onsemi BC547BTA"
 			(at 142.24 129.54 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1327,7 +1334,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
 			(at 96.52 109.22 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1342,6 +1349,13 @@
 			)
 		)
 		(property "Rating" "Constant-current source I0 = (2 VD - VEB)/R8 = 0.8 mA"
+			(at 96.52 109.22 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "onsemi BC557BTA"
 			(at 96.52 109.22 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1378,7 +1392,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 76.2 88.9 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1386,6 +1400,13 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 76.2 88.9 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "Vishay 1N4148W"
 			(at 76.2 88.9 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1422,7 +1443,7 @@
 				(font (size 1.27 1.27))
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 76.2 99.06 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1430,6 +1451,13 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 76.2 99.06 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "Vishay 1N4148W"
 			(at 76.2 99.06 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1468,7 +1496,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 76.2 119.38 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1514,7 +1542,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 99.06 91.44 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1560,7 +1588,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical"
 			(at 116.84 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1575,6 +1603,13 @@
 			)
 		)
 		(property "Rating" "PCB-mount shaft pot, linear; wired as rheostat (current limit 50 mA-1.05 A)"
+			(at 116.84 139.7 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09K1130A 1k lin"
 			(at 116.84 139.7 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1613,7 +1648,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 116.84 157.48 0)
 			(effects
 				(font (size 1.27 1.27))
