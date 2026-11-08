@@ -1543,7 +1543,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "100uF 35V 6.3x11 low-ESR"
+		(property "MPN" "Panasonic EEU-FR1V101 (100uF 35V 6.3x11)"
 			(at 76.2 114.3 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1596,6 +1596,13 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "Samsung CL21B104KBCNNNC"
+			(at 93.98 114.3 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
 		(instances
 			(project "BenchSupply"
 				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188/3c2f9f15-f5b4-478d-85dc-ec294273b69e"
@@ -1634,6 +1641,13 @@
 			)
 		)
 		(property "Datasheet" ""
+			(at 147.32 111.76 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "Phoenix Contact 1715721 (MKDS 1,5/2-5,08)"
 			(at 147.32 111.76 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1691,6 +1705,13 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "2.54 mm male header 1x3"
+			(at 147.32 139.7 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
 		(instances
 			(project "BenchSupply"
 				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188/3c2f9f15-f5b4-478d-85dc-ec294273b69e"
@@ -1736,6 +1757,13 @@
 			)
 		)
 		(property "Rating" "V/A meter thick leads (1 A): 1 = OUT- from J2, 2 = GND; module shunt in series"
+			(at 147.32 162.56 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
+		(property "MPN" "Phoenix Contact 1715721 (MKDS 1,5/2-5,08)"
 			(at 147.32 162.56 0)
 			(effects
 				(font (size 1.27 1.27))
@@ -1793,6 +1821,13 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "2.54 mm male header 1x2 + shunt"
+			(at 121.92 177.8 0)
+			(effects
+				(font (size 1.27 1.27))
+				(hide yes)
+			)
+		)
 		(instances
 			(project "BenchSupply"
 				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188/3c2f9f15-f5b4-478d-85dc-ec294273b69e"
@@ -1807,7 +1842,7 @@
 		(at 111.76 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "e0967737-6965-465b-bb24-34f9b5c5b7cc")
@@ -1853,7 +1888,7 @@
 		(at 93.98 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "f64575d1-0c22-4c42-b603-c10c5983b4cc")
@@ -1959,7 +1994,7 @@
 		(at 195.58 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "2f49c68f-e948-4631-a3d7-5a69df1f85cb")
@@ -2005,7 +2040,7 @@
 		(at 210.82 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "9119af50-bc7e-429c-afd9-3545242169bd")
@@ -2051,7 +2086,7 @@
 		(at 226.06 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "9cf69963-9b6c-4cdd-91ba-d4afb81f6fbe")
@@ -2097,7 +2132,7 @@
 		(at 241.3 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "e59d1726-a68d-486e-a7cb-e2d470924fba")
@@ -2146,75 +2181,75 @@
 			(font (size 1.27 1.27))
 			(justify right)
 		)
-		(uuid "8587f28f-e329-4683-ac6a-6039cf87fc0e")
+		(uuid "5196c55e-49f7-4d38-ac58-f3e9cd6ac53b")
 	)
 	(wire
 		(pts (xy 60.96 104.14) (xy 76.2 104.14))
 		(stroke (width 0) (type default))
-		(uuid "8aabf568-2b9a-4319-988a-53beac83cefd")
+		(uuid "1401c83c-83af-4c78-95e2-432d19cad34c")
 	)
 	(wire
 		(pts (xy 76.2 104.14) (xy 93.98 104.14))
 		(stroke (width 0) (type default))
-		(uuid "292da5d4-5e86-4be7-8f8c-84cb870a01eb")
+		(uuid "a508c39a-0a11-4308-9aa3-df420e1a6da7")
 	)
 	(wire
 		(pts (xy 93.98 104.14) (xy 111.76 104.14))
 		(stroke (width 0) (type default))
-		(uuid "e743d72d-66d3-47e9-94f1-b71fb23592df")
+		(uuid "ad87a29e-b95d-4072-b384-ab57250fdda5")
 	)
 	(wire
 		(pts (xy 111.76 104.14) (xy 119.38 104.14))
 		(stroke (width 0) (type default))
-		(uuid "59462448-737d-4d4b-b1e2-2a020dc5a9f7")
+		(uuid "7c935e4a-9c49-43db-8edf-48184ec02dcb")
 	)
 	(wire
 		(pts (xy 119.38 104.14) (xy 119.38 111.76))
 		(stroke (width 0) (type default))
-		(uuid "e06c12a6-89c3-4ff7-bd60-75474d61f8b1")
+		(uuid "a07780ca-dedc-4c2e-842e-1db7194ad46e")
 	)
 	(wire
 		(pts (xy 119.38 111.76) (xy 142.24 111.76))
 		(stroke (width 0) (type default))
-		(uuid "c2d64ee7-0d2b-43aa-81aa-e1195f5cfbed")
+		(uuid "441ac1f1-35ac-4bdd-99d0-6a3bc24a854a")
 	)
 	(wire
 		(pts (xy 76.2 104.14) (xy 76.2 110.49))
 		(stroke (width 0) (type default))
-		(uuid "25c80cb3-af27-456a-8628-58cb79a6d804")
+		(uuid "6fb9a2de-b2bc-415b-8479-6b2aa34bd29f")
 	)
 	(wire
 		(pts (xy 93.98 104.14) (xy 93.98 110.49))
 		(stroke (width 0) (type default))
-		(uuid "ffe2419d-61d7-4ac4-addc-22cb41084e74")
+		(uuid "84d75e31-ed75-4dd0-b1ac-9c42821daf33")
 	)
 	(wire
 		(pts (xy 111.76 99.06) (xy 111.76 104.14))
 		(stroke (width 0) (type default))
-		(uuid "f36f9611-720e-471b-abb0-67ade64e8e10")
+		(uuid "2bbac5b9-1239-4622-a805-7c3852c4d756")
 	)
 	(junction
 		(at 76.2 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "dacac9d7-56eb-4862-bdc8-8ea6cff05be6")
+		(uuid "972fda53-3547-4de8-a373-ba35384e2200")
 	)
 	(junction
 		(at 93.98 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a83ba88f-2bef-4dd2-a492-d8ee83a68888")
+		(uuid "0e1ec89b-6c00-41ff-b45b-75c282c3da3f")
 	)
 	(junction
 		(at 111.76 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8079c592-5497-42b1-97b7-5b273d0db230")
+		(uuid "6f78710f-359b-4c6b-999d-f2dafa951ae5")
 	)
 	(wire
 		(pts (xy 76.2 118.11) (xy 76.2 120.65))
 		(stroke (width 0) (type default))
-		(uuid "fac14235-9dbb-46d0-ab43-d9976ffbcae2")
+		(uuid "baec4c55-7adb-452a-97cc-71f6889a9280")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2224,7 +2259,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e5b716c1-74d3-4eaa-b4db-b81f09b51f90")
+		(uuid "adaf04a0-6b3a-4ed7-a868-2214b2b1105a")
 		(property "Reference" "#PWR301"
 			(at 76.2 127 0)
 			(effects
@@ -2253,7 +2288,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6c56a789-cbce-4123-b499-7b8c0296f6ab")
+			(uuid "0391d42b-15c6-49d9-8c5f-aaa0aedad215")
 		)
 		(instances
 			(project "BenchSupply"
@@ -2267,7 +2302,7 @@
 	(wire
 		(pts (xy 93.98 118.11) (xy 93.98 120.65))
 		(stroke (width 0) (type default))
-		(uuid "48e577a4-903a-4175-87fb-731a9e28f2c7")
+		(uuid "b022f747-5861-436e-8eaf-9cad13def06f")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2277,7 +2312,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5603d8b0-3dd6-4227-bee4-392a9d3968e9")
+		(uuid "863a9286-6dfb-4eec-8d5d-51777d172aed")
 		(property "Reference" "#PWR302"
 			(at 93.98 127 0)
 			(effects
@@ -2306,7 +2341,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "deb1b212-02c3-4956-b64e-5ed25d0f9e40")
+			(uuid "56e83e60-94c4-446d-846b-cade8e3f6f8a")
 		)
 		(instances
 			(project "BenchSupply"
@@ -2320,7 +2355,7 @@
 	(wire
 		(pts (xy 93.98 139.7) (xy 93.98 142.24))
 		(stroke (width 0) (type default))
-		(uuid "0ea88c12-5840-41d9-add7-2739781f8c00")
+		(uuid "bf7c0744-0c4d-470c-8153-557c2dd128a5")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2330,7 +2365,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "416e6c4b-1546-4a17-a81d-7efed0abd585")
+		(uuid "6a3be17c-cd76-4066-8df8-bfad5eed6d58")
 		(property "Reference" "#PWR303"
 			(at 93.98 148.59 0)
 			(effects
@@ -2359,7 +2394,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c666983f-14fa-47bf-8155-5198e6fae7bd")
+			(uuid "77352bd5-62da-4907-9b20-3c6714010082")
 		)
 		(instances
 			(project "BenchSupply"
@@ -2373,7 +2408,7 @@
 	(wire
 		(pts (xy 142.24 114.3) (xy 132.08 114.3))
 		(stroke (width 0) (type default))
-		(uuid "22adffe5-3e50-4e06-92ec-db38243e09f0")
+		(uuid "f819d739-0763-4bed-8c42-b4e663cef125")
 	)
 	(label "OUT_NEG"
 		(at 132.08 114.3 180)
@@ -2382,12 +2417,12 @@
 			(font (size 1.27 1.27))
 			(justify right bottom)
 		)
-		(uuid "981f0854-c44d-42da-9fd4-0dce130ab503")
+		(uuid "55816118-d9ae-44a3-94b2-1700dd21e9f9")
 	)
 	(wire
 		(pts (xy 142.24 137.16) (xy 132.08 137.16))
 		(stroke (width 0) (type default))
-		(uuid "0bd40769-e030-4794-9314-87996d7f2c42")
+		(uuid "b87dcfd9-4b6c-41dc-b611-95ca3639cd8a")
 	)
 	(hierarchical_label "VIN"
 		(shape input)
@@ -2397,12 +2432,12 @@
 			(font (size 1.27 1.27))
 			(justify right)
 		)
-		(uuid "2840727c-a6ae-41a9-9923-968c4f4eb1ab")
+		(uuid "505ffbeb-752e-4bf2-9123-6975b92c436c")
 	)
 	(wire
 		(pts (xy 142.24 139.7) (xy 137.16 139.7))
 		(stroke (width 0) (type default))
-		(uuid "5820b392-1880-44c9-bd06-93c443106aa0")
+		(uuid "e8614b00-2e0c-482f-a06b-d522092c3697")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2412,7 +2447,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "eda2b0f0-2e5b-4c6c-bf9d-40fdf5a8eabc")
+		(uuid "e305a8bc-098e-4e2b-a662-cef0061cc775")
 		(property "Reference" "#PWR304"
 			(at 137.16 146.05 0)
 			(effects
@@ -2441,7 +2476,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2543c014-15df-472a-bed6-285158ba015a")
+			(uuid "a619ba8d-280b-42c6-9390-e57710eb37e6")
 		)
 		(instances
 			(project "BenchSupply"
@@ -2455,7 +2490,7 @@
 	(wire
 		(pts (xy 142.24 142.24) (xy 132.08 142.24))
 		(stroke (width 0) (type default))
-		(uuid "f8019292-33e7-4b30-baa3-d04e1ce592d3")
+		(uuid "f849660a-ca4d-462d-8d4a-87528bdb8486")
 	)
 	(hierarchical_label "VOUT"
 		(shape input)
@@ -2465,12 +2500,12 @@
 			(font (size 1.27 1.27))
 			(justify right)
 		)
-		(uuid "e3313417-83d0-4514-bf9d-44b3db9ff3de")
+		(uuid "4e9a7b91-54c0-4f50-a2c2-ab8d39ebf55d")
 	)
 	(wire
 		(pts (xy 142.24 162.56) (xy 132.08 162.56))
 		(stroke (width 0) (type default))
-		(uuid "6447c075-ffca-4942-9f2f-efef641c9f3c")
+		(uuid "3874ec7b-ac25-44b0-a633-ac1ff4c63559")
 	)
 	(label "OUT_NEG"
 		(at 132.08 162.56 180)
@@ -2479,12 +2514,12 @@
 			(font (size 1.27 1.27))
 			(justify right bottom)
 		)
-		(uuid "b77d6035-40e1-4c56-87d3-553528968c3a")
+		(uuid "18b617c8-86ee-460b-aa3c-a0f3ef0cc060")
 	)
 	(wire
 		(pts (xy 142.24 165.1) (xy 137.16 165.1))
 		(stroke (width 0) (type default))
-		(uuid "deaefd09-d732-4085-bb05-ba5bfaca6134")
+		(uuid "918aacbd-3d16-4d0e-8aa7-380c33e2c84f")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2494,7 +2529,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4f31032e-1fc9-4233-bb12-66734030cbec")
+		(uuid "43ec350d-a371-4977-8216-6dc78b069863")
 		(property "Reference" "#PWR305"
 			(at 137.16 171.45 0)
 			(effects
@@ -2523,7 +2558,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5954da50-e266-4ca5-ab6f-004ad0b2c7e8")
+			(uuid "a6f4dea4-b7aa-4b4f-a1e7-fd3eee1584b2")
 		)
 		(instances
 			(project "BenchSupply"
@@ -2537,7 +2572,7 @@
 	(wire
 		(pts (xy 116.84 177.8) (xy 111.76 177.8))
 		(stroke (width 0) (type default))
-		(uuid "f43ec5fb-213a-4156-b64c-19e3e82659fd")
+		(uuid "f12e43f2-3421-40a2-9cad-cf3f17886a30")
 	)
 	(label "OUT_NEG"
 		(at 111.76 177.8 180)
@@ -2546,17 +2581,17 @@
 			(font (size 1.27 1.27))
 			(justify right bottom)
 		)
-		(uuid "05403095-5fec-483a-800a-dbbcf82f6bbb")
+		(uuid "7b213a4c-84d8-49f2-8f1b-8af2b8eda569")
 	)
 	(wire
 		(pts (xy 127 177.8) (xy 132.08 177.8))
 		(stroke (width 0) (type default))
-		(uuid "d74d084e-6295-4188-9d4d-0401da340d23")
+		(uuid "4b6b70e7-2bd1-4fc0-ab80-b9884a541d8b")
 	)
 	(wire
 		(pts (xy 132.08 177.8) (xy 132.08 180.34))
 		(stroke (width 0) (type default))
-		(uuid "5f82d17b-45c1-48e8-950f-d6d5766175d1")
+		(uuid "4fd44c36-0129-4fb6-95b2-ca8c040ff480")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2566,7 +2601,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4814b250-aa49-44e1-a392-2b3c8f294bd5")
+		(uuid "5427aa8f-57a0-4098-9960-bd76dcd29d4d")
 		(property "Reference" "#PWR306"
 			(at 132.08 186.69 0)
 			(effects
@@ -2595,7 +2630,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f3fe61e4-5073-4968-9ea8-ae6a70408e82")
+			(uuid "e317b4e7-97d7-4268-813c-7920c58a5113")
 		)
 		(instances
 			(project "BenchSupply"
@@ -2613,7 +2648,7 @@
 			(font (size 1.27 1.27))
 			(justify left bottom)
 		)
-		(uuid "f9ccce02-cb95-4f7a-ac39-f560ffaa3f3c")
+		(uuid "cc2885f0-0447-4d85-a0fa-2d98546ac656")
 	)
 	(text "OUT- returns to GND through the meter shunt (J4)."
 		(exclude_from_sim no)
@@ -2622,7 +2657,7 @@
 			(font (size 1.27 1.27))
 			(justify left bottom)
 		)
-		(uuid "9a1b58f9-d198-405a-b2c9-eef4e6e84616")
+		(uuid "fbcb557f-bd09-44fe-8d2d-3af70186e090")
 	)
 	(text "No meter fitted: close JP1."
 		(exclude_from_sim no)
@@ -2631,7 +2666,7 @@
 			(font (size 1.27 1.27))
 			(justify left bottom)
 		)
-		(uuid "b7c2a609-3c38-46fd-b86f-98c0cce28e6a")
+		(uuid "437a0dfc-7e16-4257-a9f9-0ab1a4a37d24")
 	)
 	(text "Q1 TO-247 bolts to HS1 at the board edge (C5: ~1.4 K/W)"
 		(exclude_from_sim no)
@@ -2640,7 +2675,7 @@
 			(font (size 1.27 1.27))
 			(justify left bottom)
 		)
-		(uuid "56fb9c3a-3ee8-4873-94d7-4716624bd8c5")
+		(uuid "47d825b1-3ca3-4348-8a23-28493aaf251a")
 	)
 	(rectangle
 		(start 55.88 92.71)
@@ -2652,7 +2687,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "66860f34-9fdb-4b82-b8b5-a444ce5783cf")
+		(uuid "422c5a3c-186f-4940-8e76-7bed78ac5b9e")
 	)
 	(text "OUTPUT FILTER AND TEST POINTS"
 		(exclude_from_sim no)
@@ -2661,10 +2696,10 @@
 			(font (size 1.52 1.52) (bold yes))
 			(justify left bottom)
 		)
-		(uuid "6ca530d8-9bc6-4502-98ea-0dbea1272006")
+		(uuid "1b94f86f-5967-4047-bc97-a35bbfe72963")
 	)
 	(rectangle
-		(start 121.92 109.22)
+		(start 121.92 105.41)
 		(end 167.64 170.18)
 		(stroke
 			(width 0)
@@ -2673,16 +2708,16 @@
 		(fill
 			(type none)
 		)
-		(uuid "56189f14-e624-43ee-bfb7-72a86b5080e6")
+		(uuid "557a615f-343e-4d05-a5cb-c1a0be260ff7")
 	)
 	(text "OUTPUT TERMINAL AND V/A METER"
 		(exclude_from_sim no)
-		(at 123.19 107.95 0)
+		(at 123.19 104.14 0)
 		(effects
 			(font (size 1.52 1.52) (bold yes))
 			(justify left bottom)
 		)
-		(uuid "eba53e5e-ce41-43d1-8e9f-280be68892f0")
+		(uuid "b8915510-7b1d-4dfc-a6a4-ccc7b70ab2bd")
 	)
 	(rectangle
 		(start 101.6 171.45)
@@ -2694,7 +2729,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "2b27cc88-6f84-4298-8359-257fdae58901")
+		(uuid "43e74ac8-0d1b-41f3-95e9-d6ce4c42cec4")
 	)
 	(text "METER BYPASS"
 		(exclude_from_sim no)
@@ -2703,11 +2738,29 @@
 			(font (size 1.52 1.52) (bold yes))
 			(justify left bottom)
 		)
-		(uuid "fd431964-ecd0-4f09-a492-ab3b3070de75")
+		(uuid "579ef60e-87ee-49f0-91db-637dff162fa3")
+	)
+	(text "Board: 2-layer FR-4 1.6 mm, <= 100 x 80 mm (PCBWay)"
+		(exclude_from_sim no)
+		(at 190.5 156.21 0)
+		(effects
+			(font (size 1.27 1.27))
+			(justify left bottom)
+		)
+		(uuid "dd0c8fe8-80bb-4d31-9e8d-fe866075a825")
+	)
+	(text "H1-H4: M3 holes with copper keep-out, one in each corner"
+		(exclude_from_sim no)
+		(at 190.5 160.02 0)
+		(effects
+			(font (size 1.27 1.27))
+			(justify left bottom)
+		)
+		(uuid "a1e7d961-8efe-43e9-9831-26cfc164c7b1")
 	)
 	(rectangle
 		(start 187.96 101.6)
-		(end 254 149.86)
+		(end 254 165.1)
 		(stroke
 			(width 0)
 			(type dash)
@@ -2715,7 +2768,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "78bfcfc3-633c-4bb7-81ce-f4872d08437d")
+		(uuid "26a5c036-b1bf-49f2-b2d1-b93e5083c419")
 	)
 	(text "MECHANICAL"
 		(exclude_from_sim no)
@@ -2724,6 +2777,6 @@
 			(font (size 1.52 1.52) (bold yes))
 			(justify left bottom)
 		)
-		(uuid "979fb36d-52e5-487e-bbe4-865caf491e07")
+		(uuid "db844c8f-d77f-47fc-ad42-af05eca9b00d")
 	)
 )
