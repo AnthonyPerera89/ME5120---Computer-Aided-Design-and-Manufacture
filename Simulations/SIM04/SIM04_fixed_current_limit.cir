@@ -1,0 +1,31 @@
+* SIM04  Fixed current limit: BC547 across RSC 0.68 ohm (checks C2)
+* Limit transistor Q2 (BC547B): base via RBL 100 ohm to e (top of RSC), emitter to out,
+*   collector to LM723 COMP - when V(RSC) reaches VBE(on) it steals the LM723's drive.
+*   I_LIMIT = VSENSE / RSC [DS1 p.8, Table 2]; VSENSE = BC547 VBE(on) 0.58/0.66/0.70 V [DS3 p.1]
+* LM723 internal limiter disabled: CL and CS both tied to out.
+* Load: resistor RL stepped from 100 ohm (light) down to 10 milliohm (short). VOUT set to 18 V.
+* Expected: VOUT = 18 V until I ~ 0.97 A, then current stays ~1 A and VOUT collapses.
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param RL=100 Rp=10k
+VIN   vin 0 24
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q1    vin b e TIP3055DS
+RSC   e out 0.68
+Q2    comp bl out BC547BDS
+RBL   e bl 100
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+RLOAD out 0 {RL}
+.step dec param RL 0.01 100 40
+.op
+.meas OP vout_V  FIND V(out)
+.meas OP iout_A  FIND I(RSC)
+.meas OP vsense_V FIND V(e)-V(out)
+.meas OP ptip_W  FIND (V(vin)-V(e))*Ic(Q1)
+.end
