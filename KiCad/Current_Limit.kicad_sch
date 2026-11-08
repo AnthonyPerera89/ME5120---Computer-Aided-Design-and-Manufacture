@@ -1729,7 +1729,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline_Wide"
 			(at 96.52 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -1925,7 +1925,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical"
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK163_Single_Horizontal"
 			(at 116.84 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -1968,7 +1968,7 @@
 				)
 			)
 		)
-		(property "MPN" "Alps RK09K1130A 1k lin"
+		(property "MPN" "Alps RK163 series 16 mm, M7 bushing, 1k lin"
 			(at 116.84 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -2286,7 +2286,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline_Wide"
 			(at 142.24 129.54 0)
 			(hide yes)
 			(show_name no)

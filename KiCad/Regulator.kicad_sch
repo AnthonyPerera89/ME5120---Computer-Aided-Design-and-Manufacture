@@ -3073,7 +3073,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Vertical"
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK163_Single_Horizontal"
 			(at 205.74 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -3116,7 +3116,7 @@
 				)
 			)
 		)
-		(property "MPN" "Alps RK09K1130A 10k lin"
+		(property "MPN" "Alps RK163 series 16 mm, M7 bushing, 10k lin"
 			(at 205.74 147.32 0)
 			(hide yes)
 			(show_name no)

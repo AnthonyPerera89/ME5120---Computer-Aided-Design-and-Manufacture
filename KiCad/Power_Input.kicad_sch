@@ -2790,7 +2790,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal"
+		(property "Footprint" "Connector_BarrelJack:BarrelJack_CUI_PJ-063AH_Horizontal"
 			(at 50.8 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -2833,7 +2833,7 @@
 				)
 			)
 		)
-		(property "MPN" "CUI PJ-102AH"
+		(property "MPN" "CUI PJ-063AH"
 			(at 50.8 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -3043,7 +3043,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Fuse:Fuse_2920_7451Metric"
+		(property "Footprint" "Fuse:Fuse_BelFuse_0ZRE0150FF_L23.4mm_W5.3mm"
 			(at 78.74 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -3086,7 +3086,7 @@
 				)
 			)
 		)
-		(property "MPN" "Bourns MF-SM150/33-2"
+		(property "MPN" "Bel Fuse 0ZRE0150FF"
 			(at 78.74 99.06 0)
 			(hide yes)
 			(show_name no)
