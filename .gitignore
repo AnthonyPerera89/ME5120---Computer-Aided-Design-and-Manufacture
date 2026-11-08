@@ -13,3 +13,6 @@ _autosave-*
 *.jpg
 *.jpeg
 *.png
+_kicad_mcp_backups/
+KiCad/history/
+~*.lck

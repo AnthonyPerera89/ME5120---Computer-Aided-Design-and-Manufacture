@@ -1,0 +1,18 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "eaddffa3-a6a2-44c0-ba0f-ce6e2d7d86c2")
+	(paper "A3")
+	(title_block
+		(title "Bench Power Supply 3-18 V, 50 mA-1 A (LM723)")
+		(date "2026-11-08")
+		(rev "A")
+		(company "University of Moratuwa - ME5120 CAD&M")
+		(comment 1 "Designer: V.N.A. Perera (259110H)")
+		(comment 2 "Input 24 V DC adapter; output 3-18 V adjustable; current limit 50 mA-1 A adjustable")
+		(comment 3 "Circuit verified in LTspice: SIM01-SIM09")
+		(comment 4 "Page: P4 Adjustable current limit")
+	)
+	(lib_symbols)
+)
