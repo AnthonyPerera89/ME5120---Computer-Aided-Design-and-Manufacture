@@ -30,3 +30,10 @@
 * ----------------------------------------------------------------------------
 .model TIP3055MIN NPN(IS=1e-11 BF=27 NF=1 IKF=2.5 ISE=1e-11 NE=1.6 VAF=100 RB=0.8 RE=0.04 RC=0.08 CJE=600p CJC=250p TF=55n BR=5)
 .model BD139DS NPN(IS=2e-13 BF=160 NF=1 IKF=0.6 ISE=2e-13 NE=1.6 VAF=100 RB=2 RE=0.1 RC=0.2 CJE=150p CJC=40p TF=2n BR=5)
+* ----------------------------------------------------------------------------
+* DSS34   - SS34 3 A / 40 V Schottky (reverse-polarity shunt). Fitted: VF ~0.47 V at 3 A,
+*           ~0.35 V at 0.5 A (SS34 datasheet DS7 to be added: VF 0.5 V max at 3 A).
+* DLEDRED - generic red indicator LED: VF ~1.9 V at 2 mA (LED datasheet DS8 to be added).
+* ----------------------------------------------------------------------------
+.model DSS34   D(IS=5u N=1.1 RS=0.03 CJO=200p BV=40 IBV=0.5m)
+.model DLEDRED D(IS=1e-19 N=2 RS=5 CJO=20p BV=5 IBV=10u)

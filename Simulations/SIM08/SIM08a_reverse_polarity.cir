@@ -1,0 +1,52 @@
+* SIM08a  Reverse polarity: adapter plugged in backwards (-24 V)   (brief 5.2: protection)
+* Protection: RF1 = resettable PTC fuse (1.5 A hold; modelled as its 0.15 ohm cold resistance,
+*   tripping is NOT modelled) + D3 = SS34 Schottky across the input, cathode to +.
+* Reverse: D3 conducts and clamps the board rail to about -0.5 V; the adapter's own current
+*   limit (assumed ~2.4 A: modelled as RSRC 10 ohm) and the PTC stop the fault.
+* Compare: RD3 = 1 milliohm (D3 fitted) vs 1 Gohm (D3 removed).
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param Rp=10k Rcl=0 RD3=1m
+VAD   vad 0 -24
+RSRC  vad vj 10
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+COUT  out co 100u
+RESR  co 0 0.1
+CHF   out 0 100n
+* --- input protection and indicators (new in SIM08) ---
+RF1   vj vin 0.15
+D3    0 d3k DSS34
+RD3   d3k vin {RD3}
+CIN   vin 0 470u
+CIN2  vin 0 100n
+RLED  vin led 10k
+DLED  led 0 DLEDRED
+* --- V/A meter module: supply draw from vin, shunt in the output return ---
+IMTR  vin 0 20m
+RSH   outm 0 10m
+RLOAD out outm 100
+.step param RD3 list 1m 1G
+.op
+.meas OP vboard_V FIND V(vin)
+.meas OP id3_A    FIND I(D3)
+.meas OP pd3_W    FIND V(vin)*I(D3)
+.end

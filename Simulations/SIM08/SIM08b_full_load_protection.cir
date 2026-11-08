@@ -1,0 +1,49 @@
+* SIM08b  Normal operation with protection, LED and meter fitted: 18 V at 0.9 A and 1.0 A
+* Checks: input drop through RF1 (PTC 0.15 ohm), LM723 headroom with the BD139's extra VBE,
+*   LED current, VOUT at the load terminals (after the meter shunt RSH 10 mohm).
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param Rp=10k Rcl=0 IL=0.9
+VAD   vj 0 24
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+COUT  out co 100u
+RESR  co 0 0.1
+CHF   out 0 100n
+* --- input protection and indicators (new in SIM08) ---
+RF1   vj vin 0.15
+D3    0 d3k DSS34
+RD3   d3k vin 1m
+CIN   vin 0 470u
+CIN2  vin 0 100n
+RLED  vin led 10k
+DLED  led 0 DLEDRED
+* --- V/A meter module: supply draw from vin, shunt in the output return ---
+IMTR  vin 0 20m
+RSH   outm 0 10m
+ILOAD out outm {IL}
+.step param IL list 0.01 0.5 0.9 1.0
+.op
+.meas OP vboard_V FIND V(vin)
+.meas OP head_V   FIND V(vin)-V(b)
+.meas OP vload_V  FIND V(out)-V(outm)
+.meas OP iled_mA  FIND I(DLED)*1000
+.end
