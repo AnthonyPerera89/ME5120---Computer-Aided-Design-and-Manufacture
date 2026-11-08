@@ -1,0 +1,49 @@
+* SIM09c_cv_cc_curves  CV/CC characteristic: output V-I curves at three current-limit settings
+* FINAL CIRCUIT (frozen values) - this is the report simulation.
+* Electronic load VEL (voltage source, Rser 50 mohm) forces the output voltage 0 .. 18.5 V.
+* RCL (limit pot) = 0 / 300 / 600 ohm -> limits ~1.05 / 0.62 / 0.20 A. VOUT set to 18 V.
+* Report figure 3: I(VEL) vs V(VEL): vertical CC line, then the CV corner at 18 V.
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param VADV=24 Rcl=0 Rp=10k
+* ---- final circuit (frozen values) ----
+VAD   vad 0 {VADV}
+RSRC  vad vj 1m
+RF1   vj vin 0.15
+D3    0 d3k DSS34
+RD3   d3k vin 1m
+CIN   vin 0 470u
+CIN2  vin 0 100n
+RLED  vin led 10k
+DLED  led 0 DLEDRED
+IMTR  vin 0 20m
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp+1m}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+COUT  out co 100u
+RESR  co 0 0.1
+CHF   out 0 100n
+RSH   outm 0 10m
+VEL elx outm 0
+REL   out elx 50m
+.step param Rcl list 0 300 600
+.dc VEL 0 18.5 0.05
+.meas DC ilim_A FIND I(VEL) AT 9
+.end

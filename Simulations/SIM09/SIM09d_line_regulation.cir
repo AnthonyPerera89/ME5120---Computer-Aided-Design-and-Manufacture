@@ -1,0 +1,49 @@
+* SIM09d_line_regulation  Line regulation and dropout: VOUT vs adapter voltage
+* FINAL CIRCUIT (frozen values) - this is the report simulation.
+* Adapter VAD swept 20..28 V at 18 V setting, load 0.5 A and 1.0 A.
+* Report figure 4: VOUT and LM723 headroom V(vin)-V(b) vs VAD; mark the 3.0 V minimum [DS1 p.4].
+* NOTE: the behavioural model keeps regulating below 3 V headroom; the real LM723 is only
+* specified down to 3.0 V, so read the dropout point from the headroom trace, not from VOUT.
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param VADV=24 Rcl=0 Rp=10k IL=1.0
+* ---- final circuit (frozen values) ----
+VAD   vad 0 {VADV}
+RSRC  vad vj 1m
+RF1   vj vin 0.15
+D3    0 d3k DSS34
+RD3   d3k vin 1m
+CIN   vin 0 470u
+CIN2  vin 0 100n
+RLED  vin led 10k
+DLED  led 0 DLEDRED
+IMTR  vin 0 20m
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp+1m}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+COUT  out co 100u
+RESR  co 0 0.1
+CHF   out 0 100n
+RSH   outm 0 10m
+ILOAD out outm {IL}
+.step param IL list 0.5 1.0
+.dc VAD 20 28 0.05
+.meas DC vin_at_3V_head FIND V(vad) WHEN V(vin)-V(b)=3
+.end

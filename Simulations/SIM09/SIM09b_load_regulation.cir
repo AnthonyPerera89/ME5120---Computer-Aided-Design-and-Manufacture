@@ -1,0 +1,48 @@
+* SIM09b_load_regulation  Load regulation: VOUT vs load current at 3 V, 10 V, 18 V
+* FINAL CIRCUIT (frozen values) - this is the report simulation.
+* ILOAD swept 0..1.0 A (.dc) at pot settings for 2.95 V, 10 V (Rp 4.687k) and 18 V (Rp 10k).
+* Report figure 2: load regulation curves; read the change from 0 to 1 A.
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param VADV=24 Rcl=0 Rp=10k
+* ---- final circuit (frozen values) ----
+VAD   vad 0 {VADV}
+RSRC  vad vj 1m
+RF1   vj vin 0.15
+D3    0 d3k DSS34
+RD3   d3k vin 1m
+CIN   vin 0 470u
+CIN2  vin 0 100n
+RLED  vin led 10k
+DLED  led 0 DLEDRED
+IMTR  vin 0 20m
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp+1m}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+COUT  out co 100u
+RESR  co 0 0.1
+CHF   out 0 100n
+RSH   outm 0 10m
+ILOAD out outm 0
+.step param Rp list 0 4.687k 10k
+.dc ILOAD 0 1.0 0.01
+.meas DC vnl_V FIND V(out)-V(outm) AT 0.01
+.meas DC vfl_V FIND V(out)-V(outm) AT 1.0
+.end
