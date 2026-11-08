@@ -10,3 +10,6 @@ _autosave-*
 *.log
 *.db
 *.net
+*.jpg
+*.jpeg
+*.png

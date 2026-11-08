@@ -1,0 +1,40 @@
+* SIM05  Adjustable current limit 50 mA ... 1 A (designs C7)
+* Idea: add a small adjustable voltage in series with the BC547 base, so it turns on
+*   at a smaller RSC voltage:  VBE(Q2) = IL*RSC + I0*(RBL + RCL)
+*   => I_LIMIT = (VBE(on) - I0*(RBL+RCL)) / RSC
+* I0 = constant current from PNP Q3 (BC557B): 2x 1N4148 set its base 1.3 V below vin,
+*   emitter resistor RE sets I0 = (VD1+VD2-VEB)/RE ~ 0.55/680 = 0.8 mA, independent of VOUT.
+* RCL = front-panel current-limit pot 0..1k (rheostat). RBL 47 ohm = base protection.
+* RSC = 0.56 ohm (was 0.68) so the top of the range reaches ~1 A.
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param RL=0.01 Rp=10k Rcl=0
+VIN   vin 0 24
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q1    vin b e TIP3055DS
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+* constant-current source
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+* reference and feedback (as SIM03/04)
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+RLOAD out 0 {RL}
+.step param Rcl list 0 100 200 300 400 500 600 650 700 725 750
+.op
+.meas OP ilim_A  FIND I(RSC)
+.meas OP i0_mA   FIND -Ic(Q3)*1000
+.meas OP vbias_V FIND V(bl)-V(e)
+.meas OP ptip_W  FIND (V(vin)-V(e))*Ic(Q1)
+.end
