@@ -1,0 +1,43 @@
+* SIM06b  Short-circuit stress WITH a BD139 driver (Darlington): how hot does the LM723 get? (checks C6)
+* Output shorted (RL = 10 milliohm), current limit at its maximum (RCL = 0 -> ~1.05 A).
+* BD139 (Q4) between LM723 VOUT and TIP3055 base: LM723 now supplies IB / hFE(BD139).
+* RBE 470 ohm from TIP3055 base to emitter: bleeds leakage, speeds turn-off (design choice).
+* TIP3055 hFE stepped with BFT: 70 = typical model (TIP3055DS, hFE ~50 at 1 A),
+*   27 = minimum (TIP3055MIN, hFE ~20 at 1 A, the datasheet minimum [DS2 p.2]) = worst case.
+* LM723 dissipation p723_W = (V(vin)-V(b)) x I(VOUT pin) + 24 V x 1.4 mA quiescent.
+* Limit: 660 mW, PDIP internal dissipation [DS1 p.3, Absolute Maximum Ratings].
+.include ../lib/LM723_macro.lib
+.include ../lib/transistors_ds.lib
+.param RL=0.01 Rp=10k Rcl=0
+VIN   vin 0 24
+RSC   e out 0.56
+Q2    comp bl out BC547BDS
+RCL   bl n1 {Rcl+1m}
+RBL   n1 e 47
+D1    vin d1 D1N4148
+D2    d1 qb D1N4148
+RBQ   qb 0 22k
+RE    vin qe 680
+Q3    bl qb qe BC557BDS
+RA    vref ni 4.7k
+RB    ni 0 3.3k
+CNI   ni 0 4.7u
+C1    comp inv 500p
+RPOT  out inv {Rp}
+RFIX  inv trim 1.30k
+RTRIM trim 0 660
+RLOAD out 0 {RL}
+.op
+XU1   vin 0 vin b vref ni inv comp out out LM723
+Q4    vin b bt BD139DS
+RBE   bt e 470
+Q1    vin bt e TIPVAR
+.param BFT=70
+.model TIPVAR NPN(IS=1e-11 BF={BFT} NF=1 IKF=2.5 ISE=1e-11 NE=1.6 VAF=100 RB=0.8 RE=0.04 RC=0.08 CJE=600p CJC=250p TF=55n BR=5)
+.step param BFT list 70 27
+.meas OP ilim_A   FIND I(RSC)
+.meas OP iout723_mA FIND Ib(Q4)*1000
+.meas OP p723_W   FIND (V(vin)-V(b))*Ib(Q4)+24*1.4m
+.meas OP pbd139_W FIND (V(vin)-V(bt))*Ic(Q4)
+.meas OP ptip_W   FIND (V(vin)-V(e))*Ic(Q1)
+.end
