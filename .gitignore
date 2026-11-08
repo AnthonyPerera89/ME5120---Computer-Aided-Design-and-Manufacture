@@ -16,3 +16,5 @@ _autosave-*
 _kicad_mcp_backups/
 KiCad/history/
 ~*.lck
+KiCad/.history/
+*.kicad_prl

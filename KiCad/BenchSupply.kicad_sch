@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20250114)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(uuid "379fe41f-289f-4d17-91f1-e45c6e9e8188")
 	(paper "A3")
 	(title_block
@@ -15,168 +15,372 @@
 		(comment 4 "Page: P1 Overview and block diagram")
 	)
 	(lib_symbols)
-	(sheet
-		(at 39.37 69.85)
-		(size 44.45 30.48)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill (color 0 0 0 0))
-		(uuid "e05c3362-c22c-4b04-90f1-58eafa1334f1")
-		(property "Sheetname" "Power_Input"
-			(at 39.37 69.1374 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify left bottom)
+	(text "PAGES\nP1 Overview (this page)\nP2 Power_Input: DC jack, PTC fuse F1, reverse diode D3, bulk caps, power LED\nP3 Regulator: LM723, BD139 + TIP3055 pass stage, RSC, voltage-set pot + trimmer, compensation\nP4 Current_Limit: BC547 limiter, BC557B current source, current-set pot\nP5 Output_Meter_Mech: output caps, output terminal, V/A meter header, shunt, heatsink, mounting holes"
+		(exclude_from_sim no)
+		(at 39.37 240 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left top)
 		)
-		(property "Sheetfile" "Power_Input.kicad_sch"
-			(at 39.37 100.9146 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify left top)
-			)
-		)
-		(pin "VIN" output
-			(at 83.82 85.09 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-			(uuid "d4815d4f-be77-4fae-873d-82839ee0b83a")
-		)
-		(instances
-			(project ""
-				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188"
-					(page "2")
-				)
-			)
-		)
+		(uuid "1e32d376-61e2-42fc-83f2-41ecb0e63b44")
 	)
-	(sheet
-		(at 129.54 59.69)
-		(size 59.69 44.45)
-		(fields_autoplaced yes)
+	(text "Signal flow left to right: 24 V adapter -> input protection -> LM723 regulator + Darlington pass stage -> output.\nGND is common to all sheets (power symbol). Open a block: double-click it."
+		(exclude_from_sim no)
+		(at 39.37 31.75 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "78e54a3a-0ece-4582-a476-7a199a4a73f4")
+	)
+	(text "VIN  20-28 V, 1.05 A max"
+		(exclude_from_sim no)
+		(at 108 47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "88dc453a-8f3a-4281-b78f-2a605af76fc4")
+	)
+	(text "P1 - OVERVIEW: BLOCK DIAGRAM"
+		(exclude_from_sim no)
+		(at 39.37 25.4 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "8ca8ff9b-1d03-411e-8c4f-3290baa7e4c4")
+	)
+	(text "POWER BUDGET (worst case)\nInput 24 V adapter: 1.0 A load + LED 2.2 mA + meter 20 mA + LM723 1.4 mA + current source 0.8 mA  =  about 1.03 A  ->  use 24 V / 1.5 A adapter\nQ1 TIP3055: up to 20 W (1 A at 3 V out), ~24 W into a short  ->  heatsink at board edge\nQ4 BD139: <= 0.34 W normal, 0.95 W into a short  ->  copper area\nRSC 0.56 ohm: 0.56 W at 1 A  ->  2 W part\nD3 SS34: 1.04 W only on reverse polarity (until F1 trips)"
+		(exclude_from_sim no)
+		(at 39.37 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a3096611-6dab-4e35-8ad2-13d269fe72c9")
+	)
+	(text "REVISIONS\nRev A  2026-11-08  First issue. Circuit = LTspice SIM09 (frozen). V.N.A. Perera"
+		(exclude_from_sim no)
+		(at 39.37 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a92e450d-a336-415c-87c6-874de7bd0c0d")
+	)
+	(text "VOUT  3-18 V, 0-1.0 A"
+		(exclude_from_sim no)
+		(at 222 65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "ee7d1170-b7da-4021-b2f0-12e15a773f28")
+	)
+	(junction
+		(at 106.68 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "21134de5-f4c3-4fe9-802d-54642713fa3d")
+	)
+	(junction
+		(at 218.44 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "88d0e4d9-a9db-47d0-90d6-a0750ea0e0e2")
+	)
+	(junction
+		(at 106.68 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd929c35-3618-4cb3-993d-e07389ea800e")
+	)
+	(wire
+		(pts
+			(xy 106.68 69.85) (xy 129.54 69.85)
+		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(fill (color 0 0 0 0))
-		(uuid "d0ae6cf8-7ba8-4feb-95bd-b364b3246427")
-		(property "Sheetname" "Regulator"
-			(at 129.54 58.9774 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify left bottom)
-			)
+		(uuid "0215ca20-679e-4e1e-8ddf-80c89eb415e0")
+	)
+	(wire
+		(pts
+			(xy 218.44 167.64) (xy 189.23 167.64)
 		)
-		(property "Sheetfile" "Regulator.kicad_sch"
-			(at 129.54 104.7246 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify left top)
-			)
+		(stroke
+			(width 0)
+			(type default)
 		)
-		(pin "VIN" input
-			(at 129.54 69.85 180)
-			(effects
-				(font (size 1.27 1.27))
-				(justify left)
-			)
-			(uuid "957d209f-3336-4974-b4ad-918f97244be4")
+		(uuid "173edb98-47f6-4835-98b2-d63c0b151720")
+	)
+	(wire
+		(pts
+			(xy 83.82 85.09) (xy 106.68 85.09)
 		)
-		(pin "VOUT" output
-			(at 189.23 67.31 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-			(uuid "a1995dd9-5061-488b-a749-dd14123fa700")
+		(stroke
+			(width 0)
+			(type default)
 		)
-		(pin "E_SENSE" bidirectional
-			(at 189.23 82.55 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-			(uuid "e957c3c1-3e26-48ba-aa04-3766194f84c2")
+		(uuid "1e4f5f33-a8a8-4cc1-92bb-65c539cc2afc")
+	)
+	(wire
+		(pts
+			(xy 189.23 95.25) (xy 203.2 95.25)
 		)
-		(pin "COMP" bidirectional
-			(at 189.23 95.25 0)
-			(effects
-				(font (size 1.27 1.27))
-				(justify right)
-			)
-			(uuid "dbcfdb42-906b-4b7d-89fc-90f4110981fc")
+		(stroke
+			(width 0)
+			(type default)
 		)
-		(instances
-			(project ""
-				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188"
-					(page "3")
-				)
-			)
+		(uuid "20414741-2a81-41b1-b595-991960b536b6")
+	)
+	(wire
+		(pts
+			(xy 203.2 147.32) (xy 189.23 147.32)
 		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23206457-1f36-4217-aa5b-6905d607ee66")
+	)
+	(wire
+		(pts
+			(xy 210.82 157.48) (xy 189.23 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c46fbaa-8b24-492c-bb3c-241493ac9b44")
+	)
+	(wire
+		(pts
+			(xy 106.68 49.53) (xy 256.54 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e7ff317-6bd9-4781-9241-0174f55e9f47")
+	)
+	(wire
+		(pts
+			(xy 189.23 82.55) (xy 210.82 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37e4295a-2884-4dca-8e60-273353d9677f")
+	)
+	(wire
+		(pts
+			(xy 106.68 69.85) (xy 106.68 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55859437-59a6-4bf4-af50-515a08c05e05")
+	)
+	(wire
+		(pts
+			(xy 189.23 67.31) (xy 218.44 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69b63406-81a9-4f3d-ab01-17de5e09afc6")
+	)
+	(wire
+		(pts
+			(xy 218.44 67.31) (xy 218.44 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75379583-233c-48dc-8aff-3e0cc284e0ff")
+	)
+	(wire
+		(pts
+			(xy 210.82 82.55) (xy 210.82 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83660618-ba4d-4a2a-b478-63104391016c")
+	)
+	(wire
+		(pts
+			(xy 106.68 49.53) (xy 106.68 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b449ef4a-100e-494a-ad76-a29835ad8d51")
+	)
+	(wire
+		(pts
+			(xy 106.68 85.09) (xy 106.68 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c14e1ac0-b8a2-49ea-8d83-190e95908fe1")
+	)
+	(wire
+		(pts
+			(xy 256.54 62.23) (xy 270.51 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4f6bbfc-241f-4e49-8bd6-2e8ebad2526a")
+	)
+	(wire
+		(pts
+			(xy 106.68 157.48) (xy 129.54 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddf374a1-77b5-424d-a5fe-30b79f0bae45")
+	)
+	(wire
+		(pts
+			(xy 256.54 49.53) (xy 256.54 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e99a461a-ef2b-4419-8d45-04c09cfa93e2")
+	)
+	(wire
+		(pts
+			(xy 203.2 95.25) (xy 203.2 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea181417-faa1-4ad7-8653-51dea2ff1187")
+	)
+	(wire
+		(pts
+			(xy 218.44 67.31) (xy 270.51 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecc6aee9-4c1a-4119-9564-ad1f368776ef")
 	)
 	(sheet
 		(at 129.54 139.7)
 		(size 59.69 35.56)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
-		(fill (color 0 0 0 0))
+		(fill
+			(color 0 0 0 0)
+		)
 		(uuid "2276ff9f-1e5e-499e-872f-e9a66bfc6df7")
 		(property "Sheetname" "Current_Limit"
 			(at 129.54 138.9874 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "Current_Limit.kicad_sch"
 			(at 129.54 175.8446 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left top)
 			)
 		)
 		(pin "VIN" input
 			(at 129.54 157.48 180)
+			(uuid "b1449a52-29e9-4721-9e7f-4e3f06e385fa")
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left)
 			)
-			(uuid "b1449a52-29e9-4721-9e7f-4e3f06e385fa")
 		)
 		(pin "VOUT" input
 			(at 189.23 167.64 0)
+			(uuid "3ed98869-3590-443a-b804-2b3e808dd165")
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify right)
 			)
-			(uuid "3ed98869-3590-443a-b804-2b3e808dd165")
 		)
 		(pin "E_SENSE" bidirectional
 			(at 189.23 157.48 0)
+			(uuid "1ac9360b-1640-40b6-b15e-bb24d8e82c23")
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify right)
 			)
-			(uuid "1ac9360b-1640-40b6-b15e-bb24d8e82c23")
 		)
 		(pin "COMP" bidirectional
 			(at 189.23 147.32 0)
+			(uuid "b0a2129d-9b24-44e3-8634-f3a17ff7e85b")
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify right)
 			)
-			(uuid "b0a2129d-9b24-44e3-8634-f3a17ff7e85b")
 		)
 		(instances
-			(project ""
+			(project "BenchSupply"
 				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188"
 					(page "4")
 				)
@@ -186,211 +390,210 @@
 	(sheet
 		(at 270.51 59.69)
 		(size 54.61 39.37)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
-		(fill (color 0 0 0 0))
+		(fill
+			(color 0 0 0 0)
+		)
 		(uuid "3c2f9f15-f5b4-478d-85dc-ec294273b69e")
 		(property "Sheetname" "Output_Meter_Mech"
 			(at 270.51 58.9774 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "Output_Meter_Mech.kicad_sch"
 			(at 270.51 99.6446 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left top)
 			)
 		)
 		(pin "VIN" input
 			(at 270.51 62.23 180)
+			(uuid "fc9f851f-f2fa-441d-a674-44115584db67")
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left)
 			)
-			(uuid "fc9f851f-f2fa-441d-a674-44115584db67")
 		)
 		(pin "VOUT" input
 			(at 270.51 67.31 180)
+			(uuid "a1e91bfa-ed6f-4307-9acc-cc05edbdccad")
 			(effects
-				(font (size 1.27 1.27))
+				(font
+					(size 1.27 1.27)
+				)
 				(justify left)
 			)
-			(uuid "a1e91bfa-ed6f-4307-9acc-cc05edbdccad")
 		)
 		(instances
-			(project ""
+			(project "BenchSupply"
 				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188"
 					(page "5")
 				)
 			)
 		)
 	)
-	(wire
-		(pts (xy 83.82 85.09) (xy 106.68 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1e4f5f33-a8a8-4cc1-92bb-65c539cc2afc")
-	)
-	(wire
-		(pts (xy 106.68 49.53) (xy 106.68 157.48))
-		(stroke (width 0) (type default))
-		(uuid "a2db9c56-26d6-45a6-8680-08fefe6b07f4")
-	)
-	(wire
-		(pts (xy 106.68 69.85) (xy 129.54 69.85))
-		(stroke (width 0) (type default))
-		(uuid "0215ca20-679e-4e1e-8ddf-80c89eb415e0")
-	)
-	(wire
-		(pts (xy 106.68 157.48) (xy 129.54 157.48))
-		(stroke (width 0) (type default))
-		(uuid "ddf374a1-77b5-424d-a5fe-30b79f0bae45")
-	)
-	(wire
-		(pts (xy 106.68 49.53) (xy 256.54 49.53))
-		(stroke (width 0) (type default))
-		(uuid "2e7ff317-6bd9-4781-9241-0174f55e9f47")
-	)
-	(wire
-		(pts (xy 256.54 49.53) (xy 256.54 62.23))
-		(stroke (width 0) (type default))
-		(uuid "e99a461a-ef2b-4419-8d45-04c09cfa93e2")
-	)
-	(wire
-		(pts (xy 256.54 62.23) (xy 270.51 62.23))
-		(stroke (width 0) (type default))
-		(uuid "c4f6bbfc-241f-4e49-8bd6-2e8ebad2526a")
-	)
-	(wire
-		(pts (xy 189.23 67.31) (xy 270.51 67.31))
-		(stroke (width 0) (type default))
-		(uuid "83f405ce-48e6-46fe-af56-7558c6ee05fc")
-	)
-	(wire
-		(pts (xy 218.44 67.31) (xy 218.44 167.64))
-		(stroke (width 0) (type default))
-		(uuid "75379583-233c-48dc-8aff-3e0cc284e0ff")
-	)
-	(wire
-		(pts (xy 218.44 167.64) (xy 189.23 167.64))
-		(stroke (width 0) (type default))
-		(uuid "173edb98-47f6-4835-98b2-d63c0b151720")
-	)
-	(wire
-		(pts (xy 189.23 82.55) (xy 210.82 82.55))
-		(stroke (width 0) (type default))
-		(uuid "37e4295a-2884-4dca-8e60-273353d9677f")
-	)
-	(wire
-		(pts (xy 210.82 82.55) (xy 210.82 157.48))
-		(stroke (width 0) (type default))
-		(uuid "83660618-ba4d-4a2a-b478-63104391016c")
-	)
-	(wire
-		(pts (xy 210.82 157.48) (xy 189.23 157.48))
-		(stroke (width 0) (type default))
-		(uuid "2c46fbaa-8b24-492c-bb3c-241493ac9b44")
-	)
-	(wire
-		(pts (xy 189.23 95.25) (xy 203.2 95.25))
-		(stroke (width 0) (type default))
-		(uuid "20414741-2a81-41b1-b595-991960b536b6")
-	)
-	(wire
-		(pts (xy 203.2 95.25) (xy 203.2 147.32))
-		(stroke (width 0) (type default))
-		(uuid "ea181417-faa1-4ad7-8653-51dea2ff1187")
-	)
-	(wire
-		(pts (xy 203.2 147.32) (xy 189.23 147.32))
-		(stroke (width 0) (type default))
-		(uuid "23206457-1f36-4217-aa5b-6905d607ee66")
-	)
-	(junction
-		(at 106.68 85.09)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bd929c35-3618-4cb3-993d-e07389ea800e")
-	)
-	(junction
-		(at 106.68 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "add39069-f8f2-43ec-ae38-a0dadbd87b37")
-	)
-	(junction
-		(at 218.44 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d10a50f7-0fe2-4120-a259-1b2fef6dae9b")
-	)
-	(text "P1 - OVERVIEW: BLOCK DIAGRAM"
+	(sheet
+		(at 129.54 59.69)
+		(size 59.69 44.45)
 		(exclude_from_sim no)
-		(at 39.37 25.4 0)
-		(effects
-			(font (size 2.54 2.54) (bold yes))
-			(justify left top)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
 		)
-		(uuid "8ca8ff9b-1d03-411e-8c4f-3290baa7e4c4")
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d0ae6cf8-7ba8-4feb-95bd-b364b3246427")
+		(property "Sheetname" "Regulator"
+			(at 129.54 58.9774 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Regulator.kicad_sch"
+			(at 129.54 104.7246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VIN" input
+			(at 129.54 69.85 180)
+			(uuid "957d209f-3336-4974-b4ad-918f97244be4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VOUT" output
+			(at 189.23 67.31 0)
+			(uuid "a1995dd9-5061-488b-a749-dd14123fa700")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "E_SENSE" bidirectional
+			(at 189.23 82.55 0)
+			(uuid "e957c3c1-3e26-48ba-aa04-3766194f84c2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "COMP" bidirectional
+			(at 189.23 95.25 0)
+			(uuid "dbcfdb42-906b-4b7d-89fc-90f4110981fc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "BenchSupply"
+				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188"
+					(page "3")
+				)
+			)
+		)
 	)
-	(text "Signal flow left to right: 24 V adapter -> input protection -> LM723 regulator + Darlington pass stage -> output.\nGND is common to all sheets (power symbol). Open a block: double-click it."
+	(sheet
+		(at 39.37 69.85)
+		(size 44.45 30.48)
 		(exclude_from_sim no)
-		(at 39.37 31.75 0)
-		(effects
-			(font (size 1.27 1.27))
-			(justify left top)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
 		)
-		(uuid "78e54a3a-0ece-4582-a476-7a199a4a73f4")
-	)
-	(text "VIN  20-28 V, 1.05 A max"
-		(exclude_from_sim no)
-		(at 108.0 47.0 0)
-		(effects
-			(font (size 1.27 1.27))
-			(justify left top)
+		(fill
+			(color 0 0 0 0)
 		)
-		(uuid "88dc453a-8f3a-4281-b78f-2a605af76fc4")
-	)
-	(text "VOUT  3-18 V, 0-1.0 A"
-		(exclude_from_sim no)
-		(at 222.0 65.0 0)
-		(effects
-			(font (size 1.27 1.27))
-			(justify left top)
+		(uuid "e05c3362-c22c-4b04-90f1-58eafa1334f1")
+		(property "Sheetname" "Power_Input"
+			(at 39.37 69.1374 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
 		)
-		(uuid "ee7d1170-b7da-4021-b2f0-12e15a773f28")
-	)
-	(text "REVISIONS\nRev A  2026-11-08  First issue. Circuit = LTspice SIM09 (frozen). V.N.A. Perera"
-		(exclude_from_sim no)
-		(at 39.37 190.5 0)
-		(effects
-			(font (size 1.27 1.27))
-			(justify left top)
+		(property "Sheetfile" "Power_Input.kicad_sch"
+			(at 39.37 100.9146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
 		)
-		(uuid "a92e450d-a336-415c-87c6-874de7bd0c0d")
-	)
-	(text "POWER BUDGET (worst case)\nInput 24 V adapter: 1.0 A load + LED 2.2 mA + meter 20 mA + LM723 1.4 mA + current source 0.8 mA  =  about 1.03 A  ->  use 24 V / 1.5 A adapter\nQ1 TIP3055: up to 20 W (1 A at 3 V out), ~24 W into a short  ->  heatsink at board edge\nQ4 BD139: <= 0.34 W normal, 0.95 W into a short  ->  copper area\nRSC 0.56 ohm: 0.56 W at 1 A  ->  2 W part\nD3 SS34: 1.04 W only on reverse polarity (until F1 trips)"
-		(exclude_from_sim no)
-		(at 39.37 205.74 0)
-		(effects
-			(font (size 1.27 1.27))
-			(justify left top)
+		(pin "VIN" output
+			(at 83.82 85.09 0)
+			(uuid "d4815d4f-be77-4fae-873d-82839ee0b83a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
 		)
-		(uuid "a3096611-6dab-4e35-8ad2-13d269fe72c9")
-	)
-	(text "PAGES\nP1 Overview (this page)\nP2 Power_Input: DC jack, PTC fuse F1, reverse diode D3, bulk caps, power LED\nP3 Regulator: LM723, BD139 + TIP3055 pass stage, RSC, voltage-set pot + trimmer, compensation\nP4 Current_Limit: BC547 limiter, BC557B current source, current-set pot\nP5 Output_Meter_Mech: output caps, output terminal, V/A meter header, shunt, heatsink, mounting holes"
-		(exclude_from_sim no)
-		(at 39.37 240.0 0)
-		(effects
-			(font (size 1.27 1.27))
-			(justify left top)
+		(instances
+			(project "BenchSupply"
+				(path "/379fe41f-289f-4d17-91f1-e45c6e9e8188"
+					(page "2")
+				)
+			)
 		)
-		(uuid "1e32d376-61e2-42fc-83f2-41ecb0e63b44")
 	)
 	(sheet_instances
 		(path "/"
